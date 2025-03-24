@@ -1,0 +1,21 @@
+/* src/pages/Wallet/withdrawForm.css */
+
+/**
+* Custom styling for withdrawal amount input field
+* Dynamically sizes the input based on content
+*/
+.withdrawInput {
+  width: calc(1ch + 10px); /* Minimum width based on content (1 character + padding) */
+  /* max-width: 300px; */ /* Commented out max-width restriction */
+  /* width: auto; */ /* Commented out automatic width setting */
+ }
+ 
+ /**
+ * Remove default spinner buttons from number input fields
+ * Applies to all browsers that use webkit (Chrome, Safari, Edge)
+ */
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Hide the default increment/decrement buttons */
+  margin: 0; /* Remove any margin that might be applied */
+ } 

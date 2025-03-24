@@ -1,10 +1,22 @@
-HELP.md
+### Java / Spring ###
+*.class
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+*.jar
+*.war
+*.ear
+*.log
+log/
+logs/
+*.tmp
+*~
 
-### STS ###
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### STS / Eclipse ###
 .apt_generated
 .classpath
 .factorypath
@@ -13,12 +25,6 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -26,8 +32,34 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+
+### OS Files ###
+.DS_Store
+Thumbs.db
+
+### Environment Files ###
+*.env
+application-local.properties
+application-dev.properties
+
+### React / Node.js ###
+/frontend/node_modules/
+/frontend/build/
+/frontend/dist/
+/frontend/.env
+/frontend/.env.local
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/package-lock.json
+/frontend/yarn.lock
+
+### System/User Directories ###
+.gradle/
+.m2/
+.npm/
+.cache/
+.android/

@@ -1,0 +1,139 @@
+/* File: src/index.css
+
+   This file contains global styles and theme configuration for the application */
+
+/* Import Tailwind CSS base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+/* Define CSS variables for the application's color scheme and design tokens
+   These variables use the Tailwind CSS layer system to properly cascade */
+@layer base {
+  /* Light mode theme variables */
+  :root {
+    /* Background and foreground colors */
+    --background: 0 0% 100%;         /* White background */
+    --foreground: 224 71.4% 4.1%;    /* Dark text color */
+
+    /* Card component colors */
+    --card: 0 0% 100%;               /* White card background */
+    --card-foreground: 224 71.4% 4.1%; /* Dark card text */
+ 
+    /* Popover/dropdown colors */
+    --popover: 0 0% 100%;            /* White popover background */
+    --popover-foreground: 224 71.4% 4.1%; /* Dark popover text */
+ 
+    /* Primary action colors (buttons, links) */
+    --primary: 220.9 39.3% 11%;      /* Dark blue primary color */
+    --primary-foreground: 210 20% 98%; /* Light text on primary buttons */
+ 
+    /* Secondary/alternative action colors */
+    --secondary: 220 14.3% 95.9%;    /* Light gray secondary color */
+    --secondary-foreground: 220.9 39.3% 11%; /* Dark text on secondary elements */
+ 
+    /* Muted/subdued element colors */
+    --muted: 220 14.3% 95.9%;        /* Light gray for muted elements */
+    --muted-foreground: 220 8.9% 46.1%; /* Medium gray for muted text */
+ 
+    /* Accent/highlight colors */
+    --accent: 220 14.3% 95.9%;       /* Light gray accent color */
+    --accent-foreground: 220.9 39.3% 11%; /* Dark text on accent elements */
+ 
+    /* Destructive action colors (delete, error) */
+    --destructive: 0 84.2% 60.2%;    /* Red for destructive actions */
+    --destructive-foreground: 210 20% 98%; /* Light text on destructive elements */
+
+    /* Border, input, and focus ring colors */
+    --border: 220 13% 91%;           /* Light gray border color */
+    --input: 220 13% 91%;            /* Light gray input background */
+    --ring: 224 71.4% 4.1%;          /* Dark focus ring color */
+ 
+    /* Border radius for rounded corners */
+    --radius: 0.5rem;                /* 8px border radius */
+  }
+ 
+  /* Dark mode theme variables - activated when .dark class is applied */
+  .dark {
+    /* Background and foreground colors - inverted from light theme */
+    --background: 224 71.4% 4.1%;    /* Dark background */
+    --foreground: 210 20% 98%;       /* Light text color */
+ 
+    /* Card component colors */
+    --card: 224 71.4% 4.1%;          /* Dark card background */
+    --card-foreground: 210 20% 98%;  /* Light card text */
+ 
+    /* Popover/dropdown colors */
+    --popover: 224 71.4% 4.1%;       /* Dark popover background */
+    --popover-foreground: 210 20% 98%; /* Light popover text */
+ 
+    /* Primary action colors (buttons, links) */
+    --primary: 210 20% 98%;          /* Light primary color */
+    --primary-foreground: 220.9 39.3% 11%; /* Dark text on primary buttons */
+ 
+    /* Secondary/alternative action colors */
+    --secondary: 215 27.9% 16.9%;    /* Darker gray secondary color */
+    --secondary-foreground: 210 20% 98%; /* Light text on secondary elements */
+ 
+    /* Muted/subdued element colors */
+    --muted: 215 27.9% 16.9%;        /* Darker gray for muted elements */
+    --muted-foreground: 217.9 10.6% 64.9%; /* Medium gray for muted text */
+ 
+    /* Accent/highlight colors */
+    --accent: 215 27.9% 16.9%;       /* Darker gray accent color */
+    --accent-foreground: 210 20% 98%; /* Light text on accent elements */
+ 
+    /* Destructive action colors (delete, error) - darker in dark mode */
+    --destructive: 0 62.8% 30.6%;    /* Darker red for destructive actions */
+    --destructive-foreground: 210 20% 98%; /* Light text on destructive elements */
+ 
+    /* Border, input, and focus ring colors */
+    --border: 215 27.9% 16.9%;       /* Darker gray border color */
+    --input: 215 27.9% 16.9%;        /* Darker gray input background */
+    --ring: 216 12.2% 83.9%;         /* Light focus ring color */
+  }
+}
+ 
+/* Base element styles */
+@layer base {
+  /* Apply border color to all elements */
+  * {
+    @apply border-border;
+  }
+
+  /* Apply dark theme, background color, and text color to body */
+  /* Also prevent horizontal overflow */
+  body {
+    @apply dark bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+/* Custom scrollbar styles */
+/* Container with scrollable content */
+.scroll-container {
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Webkit-specific scrollbar styles (Chrome, Safari, newer Edge) */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;          /* Width of the scrollbar */
+  background: transparent; /* Transparent background */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track background */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #1e293b;    /* Dark blue scrollbar thumb color */
+  border-radius: 5rem;    /* Fully rounded thumb */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;       /* Slightly lighter on hover for feedback */
+}
+
+/* Internet Explorer and Edge legacy scrollbar compatibility */
+.scroll-container {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Auto-hiding scrollbar in IE/Edge */
+}

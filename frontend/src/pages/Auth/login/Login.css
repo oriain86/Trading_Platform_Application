@@ -1,0 +1,91 @@
+/**
+ * File: src/pages/Auth/login/Login.css 
+ * Description: Styling for the login page with animated gradient effects
+ */
+
+/* Reset default browser styles and set font family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "san-serif";
+}
+
+/* Main container for the login page */
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #25252b; /* Dark background color */
+}
+
+/* Define a custom CSS property for animation */
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* Styling for the outer box with animated gradient border */
+.box {
+    position: relative;
+    
+    /* Pink gradient pattern that rotates */
+    background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+    filter: drop-shadow(0 15px 50px #000); /* Add shadow for depth */
+    border-radius: 20px;
+    animation: rotating 4s linear infinite; /* Apply rotation animation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Define the rotation animation */
+@keyframes rotating {
+    0% {
+        --a: 0deg;
+    }
+    100% {
+        --a: 360deg;
+    }
+}
+
+/* Second layer of animated gradient (blue color) */
+.box::before {
+    content: "";
+    position: absolue; /* Typo: should be "absolute" */
+    width: 100%;
+    height: 100%;
+    /* Blue gradient pattern that rotates */
+    background: repeating-conic-gradient(from var(--a), #45f3ff 0%, #45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    animation-delay: -1s; /* Offset animation for interesting effect */
+}
+
+/* Inner solid background of the box */
+.box::after {
+    content: "";
+    position: absolute;
+    inset: 4px; /* Shorthand for top, right, bottom, left */
+    background: #2d2d39; /* Dark background color */
+    border-radius: 15px;
+    border: 5px solid #25252b;
+}
+
+/* Styling for the login form container */
+.login {
+    position: absolute;
+    inset: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it appears above the animated backgrounds */
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Subtle highlight at bottom */
+} 
