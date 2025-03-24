@@ -31,7 +31,8 @@ public class TradingHistory {
     private double buyingPrice;
 
     // Embedded Coin object, storing its fields directly in this table
-    @Embedded
+    @ManyToOne
+    @JoinColumn
     private Coin coin;
 
     // Many-to-one relationship with User entity, linking the trading history to a user
