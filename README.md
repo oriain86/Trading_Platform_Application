@@ -1,4 +1,4 @@
-# Crypto Exchange & Portfolio Management Platform
+# Project: Crypto Exchange & Portfolio Management Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: React & Spring Boot](https://img.shields.io/badge/Platform-React%20%26%20Spring%20Boot-blue.svg)]()
