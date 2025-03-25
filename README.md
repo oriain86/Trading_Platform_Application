@@ -206,7 +206,17 @@ crypto-exchange-platform/
 │   ├── package.json
 │   └── tailwind.config.js
 └── README.md
+```
 
+### Acknowledgments
+
+This project was originally developed following a guided tutorial by [Code With Zosh].
+I expanded upon the core functionality by adding:
+- A robust test suite (with unit and integration tests)
+- Comprehensive in-line documentation and comments
+- Various UI/UX enhancements on the frontend
+
+These modifications allowed me to deepen my understanding of the underlying technologies while customizing the application to my needs. 
 
 
 
